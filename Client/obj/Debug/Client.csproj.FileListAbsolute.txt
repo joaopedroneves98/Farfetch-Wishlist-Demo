@@ -1,0 +1,5 @@
+C:\Projects\WishList\Client\bin\Debug\Client.dll
+C:\Projects\WishList\Client\bin\Debug\Client.pdb
+C:\Projects\WishList\Client\obj\Debug\Client.csprojAssemblyReference.cache
+C:\Projects\WishList\Client\obj\Debug\Client.dll
+C:\Projects\WishList\Client\obj\Debug\Client.pdb

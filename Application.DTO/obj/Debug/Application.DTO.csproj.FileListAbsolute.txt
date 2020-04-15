@@ -1,0 +1,5 @@
+C:\Projects\WishList\Application.DTO\bin\Debug\Application.DTO.dll
+C:\Projects\WishList\Application.DTO\bin\Debug\Application.DTO.pdb
+C:\Projects\WishList\Application.DTO\obj\Debug\Application.DTO.csprojAssemblyReference.cache
+C:\Projects\WishList\Application.DTO\obj\Debug\Application.DTO.dll
+C:\Projects\WishList\Application.DTO\obj\Debug\Application.DTO.pdb

@@ -1,0 +1,10 @@
+C:\Projects\WishList\Domain.Services\bin\Debug\Domain.Services.dll
+C:\Projects\WishList\Domain.Services\bin\Debug\Domain.Services.pdb
+C:\Projects\WishList\Domain.Services\bin\Debug\Application.DTO.dll
+C:\Projects\WishList\Domain.Services\bin\Debug\Domain.Model.dll
+C:\Projects\WishList\Domain.Services\bin\Debug\Application.DTO.pdb
+C:\Projects\WishList\Domain.Services\bin\Debug\Domain.Model.pdb
+C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.csprojAssemblyReference.cache
+C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.csproj.CopyComplete
+C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.dll
+C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.pdb

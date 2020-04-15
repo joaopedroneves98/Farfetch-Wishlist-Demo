@@ -1,0 +1,4 @@
+C:\Projects\WishList\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.dll
+C:\Projects\WishList\Infrastructure.CrossCutting\bin\Debug\Infrastructure.CrossCutting.pdb
+C:\Projects\WishList\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.dll
+C:\Projects\WishList\Infrastructure.CrossCutting\obj\Debug\Infrastructure.CrossCutting.pdb
