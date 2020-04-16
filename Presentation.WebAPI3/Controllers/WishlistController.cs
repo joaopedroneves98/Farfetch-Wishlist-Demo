@@ -18,11 +18,12 @@
         [HttpGet]
         public IHttpActionResult GetWishlists([FromUri] string ownerID)
         {
-            if (this.wishlistService.GetWishlists(ownerID) == null)
+            var wishlists = this.wishlistService.GetWishlists(ownerID);
+            if (wishlists == null)
             {
-                return this.NotFound();
+                return this.BadRequest("No wishlists found for the provided owner ID");
             }
-            return this.Ok(this.wishlistService.GetWishlists(ownerID));
+            return this.Ok(wishlists);
         }
 
         [Route("Owners/{ownerID}/Wishlists")]

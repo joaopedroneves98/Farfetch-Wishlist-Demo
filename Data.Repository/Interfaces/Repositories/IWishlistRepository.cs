@@ -11,21 +11,21 @@
 
         Wishlist GetWishlist(string wishlistID);
 
-        string AddWishlist(Wishlist wishlist);
+        Wishlist AddWishlist(Wishlist wishlist);
 
-        string DeleteWishlist(string wishlistID);
+        Wishlist DeleteWishlist(string wishlistID);
 
-        string EmptyWishlist(string wishlistID);
+        Wishlist EmptyWishlist(string wishlistID);
 
         List<WishlistItem> GetAllItems();
 
-        string AddWishlistItem(string wishlistID, WishlistItem item);
+        WishlistItem AddWishlistItem(string wishlistID, WishlistItem item);
 
         WishlistItem GetWishlistItem(string itemCode);
 
-        string DeleteWishlistItem(string wishlistID, string itemCode);
+        WishlistItem DeleteWishlistItem(string wishlistID, string itemCode);
 
-        string UpdateWishlistItem(WishlistItem item);
+        WishlistItem UpdateWishlistItem(WishlistItem item);
 
     }
 }

@@ -43,18 +43,18 @@
             return wishlist.ElementAt(0);
         }
 
-        public string AddWishlist(Wishlist wishlist)
+        public Wishlist AddWishlist(Wishlist wishlist)
         {
             if (wishlist != null)
             {
                 this.Context.Wishlists.Add(wishlist);
                 this.Context.SaveChanges();
-                return wishlist.ExternalId;
+                return wishlist;
             }
             return null;
         }
 
-        public string DeleteWishlist(string wishlistID)
+        public Wishlist DeleteWishlist(string wishlistID)
         {
             var wishlist = this.GetWishlist(wishlistID);
             if (wishlist == null) { return null; }
@@ -62,15 +62,15 @@
             this.Context.Wishlists.Remove(wishlist);
             this.Context.SaveChanges();
 
-            return wishlist.ExternalId;
+            return wishlist;
         }
 
-        public string EmptyWishlist(string wishlistID)
+        public Wishlist EmptyWishlist(string wishlistID)
         {
             var wishlist = this.GetWishlist(wishlistID);
 
             wishlist.WishlistItems.Clear();
-            return wishlist.ExternalId;
+            return wishlist;
         }
 
 
@@ -81,7 +81,7 @@
             return items;
         }
 
-        public string AddWishlistItem(string wishlistID, WishlistItem item)
+        public WishlistItem AddWishlistItem(string wishlistID, WishlistItem item)
         {
             var wishlist = this.GetWishlist(wishlistID);
             if (wishlist != null)
@@ -90,7 +90,7 @@
 
                 this.Context.WishlistItems.Add(item);
                 this.Context.SaveChanges();
-                return item.Code;
+                return item;
             }
             return null;
         }
@@ -107,7 +107,7 @@
             return items.ElementAt(0);
         }
 
-        public string DeleteWishlistItem(string wishlistID, string itemCode)
+        public WishlistItem DeleteWishlistItem(string wishlistID, string itemCode)
         {
             var item = this.GetWishlistItem(itemCode);
             if (item == null) { return null; }
@@ -120,23 +120,23 @@
             this.Context.WishlistItems.Remove(item);
             this.Context.SaveChanges();
 
-            return item.Code;
+            return item;
         }
 
-        public string UpdateWishlistItem(WishlistItem item)
+        public WishlistItem UpdateWishlistItem(WishlistItem item)
         {
             if (item == null)
             {
                 return null;
             }
             WishlistItem itemToUpdate = this.Context.WishlistItems
-                .Where(o => o.Id == o.Id).FirstOrDefault();
+                .Where(o => o.Id == item.Id).FirstOrDefault();
 
             if (itemToUpdate != null)
             {
                 this.Context.Entry(itemToUpdate).CurrentValues.SetValues(item);
                 this.Context.SaveChanges();
-                return item.Code;
+                return item;
             }
             return null;
         }
