@@ -2,7 +2,7 @@
 {
     using System.Web.Http;
 
-    [RoutePrefix("Wishlist/v1")]
+    [RoutePrefix("Wishlist")]
     public class WishlistItemController : ApiController
     {
     }

@@ -8,10 +8,10 @@
 
         List<OwnerDTO> GetAllOwners();
 
-        string DeleteOwner(string ownerID);
+        OwnerDTO DeleteOwner(string ownerID);
 
         OwnerDTO GetOwner(string ownerID);
 
-        string UpdateOwner(OwnerDTO dto);
+        OwnerDTO UpdateOwner(OwnerDTO dto);
     }
 }

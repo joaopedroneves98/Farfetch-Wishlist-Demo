@@ -11,10 +11,10 @@
 
         Owner Add(Owner owner);
 
-        string DeleteOwner(string ownerID);
+        Owner DeleteOwner(string ownerID);
 
         List<Owner> GetAllOwners();
 
-        string UpdateOwner(Owner owner);
+        Owner UpdateOwner(Owner owner);
     }
 }

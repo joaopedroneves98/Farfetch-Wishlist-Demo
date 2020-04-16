@@ -57,7 +57,7 @@
             return null;
         }
 
-        public string DeleteOwner(string ownerID)
+        public Owner DeleteOwner(string ownerID)
         {
             var owner = this.GetOwnerObject(ownerID);
             if (owner != null)
@@ -65,7 +65,7 @@
                 this.Context.Owners.Remove(owner);
                 this.Context.SaveChanges();
 
-                return owner.ExternalId;
+                return owner;
             }
             return null;
         }
@@ -75,7 +75,7 @@
             return this.Context.Owners.ToList();
         }
 
-        public string UpdateOwner(Owner owner)
+        public Owner UpdateOwner(Owner owner)
         {
             if (owner == null)
             {
@@ -89,7 +89,7 @@
             {
                 this.Context.Entry(ownerToUpdate).CurrentValues.SetValues(owner);
                 this.Context.SaveChanges();
-                return owner.ExternalId;
+                return owner;
             }
             return null;
         }

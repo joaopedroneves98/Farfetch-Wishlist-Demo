@@ -45,3 +45,5 @@ C:\Projects\WishList\Application.Services\obj\Debug\Application.Services.csprojA
 C:\Projects\WishList\Application.Services\obj\Debug\Application.Services.csproj.CopyComplete
 C:\Projects\WishList\Application.Services\obj\Debug\Application.Services.dll
 C:\Projects\WishList\Application.Services\obj\Debug\Application.Services.pdb
+C:\Projects\WishList\Application.Services\bin\Debug\Domain.Services.dll
+C:\Projects\WishList\Application.Services\bin\Debug\Domain.Services.pdb

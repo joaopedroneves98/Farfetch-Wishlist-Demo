@@ -4,7 +4,7 @@
     using Application.Services.Interfaces;
     using System.Web.Http;
 
-    [RoutePrefix("Wishlist/v1")]
+    [RoutePrefix("Wishlist")]
     public class WishlistController : ApiController
     {
         private readonly IWishlistService wishlistService;

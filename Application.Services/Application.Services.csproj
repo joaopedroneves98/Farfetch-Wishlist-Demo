@@ -235,6 +235,14 @@
       <Project>{F63E3579-BC72-4B05-A1DE-16C2DA98BF17}</Project>
       <Name>Data.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain.Model\Domain.Model.csproj">
+      <Project>{60E2A285-1886-4A6B-B888-490C409CE7BA}</Project>
+      <Name>Domain.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain.Services\Domain.Services.csproj">
+      <Project>{F9FFAF56-41C7-4075-B302-7F03C7306CB8}</Project>
+      <Name>Domain.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

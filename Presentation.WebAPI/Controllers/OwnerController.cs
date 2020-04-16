@@ -3,7 +3,7 @@
     using Application.Services.Interfaces;
     using System.Web.Http;
 
-    [RoutePrefix("Wishlist/v1/Owners")]
+    [RoutePrefix("Wishlist/Owners")]
     public class OwnerController : ApiController
     {
         private readonly IOwnerService ownerService;
