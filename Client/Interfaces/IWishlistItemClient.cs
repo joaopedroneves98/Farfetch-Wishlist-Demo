@@ -1,18 +1,19 @@
 ﻿namespace Client.Interfaces
 {
     using Application.DTO;
-    using System;
     using System.Collections.Generic;
-    using System.Threading.Tasks;
 
     public interface IWishlistItemClient
     {
-        Task<WishlistItemDTO> GetItemAsync(string ownerID, string wishlistID, string itemCode);
+        WishlistItemDTO AddWishlistItem(string wishlistID, WishlistItemDTO wishlistItemDTO);
 
-        Task<List<WishlistItemDTO>> GetAllItemsAsync(string ownerID, string wishlistID);
+        WishlistItemDTO DeleteWishlistItem(string wishlistId, string itemCode);
 
-        Task<Uri> PostItemAsync(string ownerID, string wishlistID, WishlistItemDTO item);
+        WishlistItemDTO GetWishlistItem(string itemCode);
 
-        Task<Uri> DeleteWishlistAsync(string ownerID, string wishlistID, string itemCode);
+        List<WishlistItemDTO> GetWishlistItems(string wishListID);
+
+        WishlistItemDTO UpdateWishlistItem(string wishlistID, WishlistItemDTO item);
+
     }
 }

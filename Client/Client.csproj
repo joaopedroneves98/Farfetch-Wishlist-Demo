@@ -41,7 +41,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Implementations\OwnerClient.cs" />
+    <Compile Include="Implementations\WishlistClient.cs" />
+    <Compile Include="Implementations\WishlistItemClient.cs" />
+    <Compile Include="Interfaces\IOwnerClient.cs" />
+    <Compile Include="Interfaces\IWishlistClient.cs" />
+    <Compile Include="Interfaces\IWishlistItemClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application.DTO\Application.DTO.csproj">
+      <Project>{2BA1024C-6F14-4120-A079-2AFF9F24363E}</Project>
+      <Name>Application.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Application.Services\Application.Services.csproj">
+      <Project>{899FF2A4-5B88-447D-BA22-52A3CFBC68E2}</Project>
+      <Name>Application.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Client.nuspec" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

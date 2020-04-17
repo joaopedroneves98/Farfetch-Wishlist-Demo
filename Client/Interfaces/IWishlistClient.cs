@@ -7,12 +7,13 @@
 
     public interface IWishlistClient
     {
-        Task<WishlistDTO> GetWishlistAsync(string ownerID, string externalID);
+        WishlistDTO AddWishlist(string ownerId, WishlistDTO wishlistDTO);
 
-        Task<List<WishlistDTO>> GetAllWishlistsAsync(string ownerID);
+        WishlistDTO DeleteWishlist(string wishlistId);
 
-        Task<Uri> PostWishlistAsync(string ownerID, WishlistDTO wishlist);
+        WishlistDTO GetWishlist(string wishlistId);
 
-        Task<Uri> DeleteWishlistAsync(string ownerID, string externalID);
+        List<WishlistDTO> GetWishlists(string ownerId);
+
     }
 }

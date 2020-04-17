@@ -7,14 +7,13 @@
 
     public interface IOwnerClient
     {
-        Task<List<OwnerDTO>> GetAllOwnersAsync();
 
-        Task<OwnerDTO> GetOwnerAsync(string externalID);
+        OwnerDTO AddOwner(OwnerDTO ownerDTO);
 
-        Task<Uri> PostOwnerAsync(OwnerDTO owner);
+        OwnerDTO DeleteOwner(string ownerId);
 
-        Task<Uri> PutOwnerAsync(OwnerDTO owner);
+        OwnerDTO GetOwner(string ownerId);
 
-        Task<Uri> DeleteOwnerAsync(string externalID);
+        OwnerDTO UpdateOwner(OwnerDTO ownerDTO);
     }
 }

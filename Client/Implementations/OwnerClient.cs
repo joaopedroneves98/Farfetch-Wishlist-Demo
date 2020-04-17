@@ -1,37 +1,36 @@
 ﻿namespace Client.Implementations
 {
     using Application.DTO;
+    using Application.Services.Interfaces;
     using Client.Interfaces;
-    using System;
-    using System.Collections.Generic;
-    using System.Net.Http;
-    using System.Threading.Tasks;
 
-    public class OwnerClient : HttpClient, IOwnerClient
+    public class OwnerClient : IOwnerClient
     {
-        public Task<Uri> DeleteOwnerAsync(string externalID)
+        private readonly IOwnerService ownerService;
+
+        public OwnerClient(IOwnerService ownerService)
         {
-            throw new NotImplementedException();
+            this.ownerService = ownerService;
         }
 
-        public Task<List<OwnerDTO>> GetAllOwnersAsync()
+        public OwnerDTO AddOwner(OwnerDTO ownerDTO)
         {
-            throw new NotImplementedException();
+            return this.ownerService.AddOwner(ownerDTO);
         }
 
-        public Task<OwnerDTO> GetOwnerAsync(string externalID)
+        public OwnerDTO DeleteOwner(string ownerId)
         {
-            throw new NotImplementedException();
+            return this.ownerService.DeleteOwner(ownerId);
         }
 
-        public Task<Uri> PostOwnerAsync(OwnerDTO owner)
+        public OwnerDTO GetOwner(string ownerId)
         {
-            throw new NotImplementedException();
+            return this.ownerService.GetOwner(ownerId);
         }
 
-        public Task<Uri> PutOwnerAsync(OwnerDTO owner)
+        public OwnerDTO UpdateOwner(OwnerDTO ownerDTO)
         {
-            throw new NotImplementedException();
+            return this.ownerService.UpdateOwner(ownerDTO);
         }
     }
 }

@@ -6,7 +6,7 @@
 
     public class WishlistContext : DbContext
     {
-        public WishlistContext() : base("WishlistConnectionString")
+        public WishlistContext() : base("Name=WishlistConnectionString")
         {
 
         }
