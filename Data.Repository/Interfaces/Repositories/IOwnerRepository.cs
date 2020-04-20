@@ -9,7 +9,7 @@
     {
         Owner GetOwnerObject(string externalID);
 
-        Owner Add(Owner owner);
+        Owner AddOwner(Owner owner);
 
         Owner DeleteOwner(string ownerID);
 

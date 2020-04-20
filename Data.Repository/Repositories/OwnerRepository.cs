@@ -46,7 +46,7 @@
             }
         }
 
-        public Owner Add(Owner owner)
+        public Owner AddOwner(Owner owner)
         {
             if (owner != null)
             {

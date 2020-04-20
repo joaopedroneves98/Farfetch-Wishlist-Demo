@@ -22,7 +22,7 @@
             {
                 return null;
             }
-            var ownerAdded = this.ownerRepository.Add(ownerToAdd);
+            var ownerAdded = this.ownerRepository.AddOwner(ownerToAdd);
             return OwnerDTOMapper.ObjectToDTO(ownerAdded);
         }
 
