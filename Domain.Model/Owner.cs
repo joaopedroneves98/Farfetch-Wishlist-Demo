@@ -21,5 +21,29 @@
         {
             this.Wishlists = new List<Wishlist>();
         }
+
+        public void AddWishlist(Wishlist wishlist)
+        {
+            this.Wishlists.Add(wishlist);
+        }
+
+        public Wishlist GetOrCreateWishlist(string wishlistID)
+        {
+            Wishlist wishlist = this.GetWishlist(wishlistID);
+            if (wishlist == null)
+            {
+                wishlist = new Wishlist
+                {
+                    ExternalId = wishlistID
+                };
+                this.Wishlists.Add(wishlist);
+            }
+            return wishlist;
+        }
+
+        public Wishlist GetWishlist(string wishlistID)
+        {
+            return this.Wishlists.Find(w => w.ExternalId == wishlistID);
+        }
     }
 }

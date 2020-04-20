@@ -22,9 +22,26 @@
             this.WishlistItems = new List<WishlistItem>();
         }
 
+        public void AddOrUpdateWishlistItem(WishlistItem item)
+        {
+            if (!this.WishlistItems.Contains(item))
+            {
+                item.WishlistId = this.Id;
+                this.WishlistItems.Add(item);
+            }
+            else
+            {
+                this.WishlistItems.Remove(item);
+                this.WishlistItems.Add(item);
+            }
+        }
+
         public void RemoveWishlistItem(WishlistItem item)
         {
-            throw new NotImplementedException();
+            if (this.WishlistItems.Contains(item))
+            {
+                this.WishlistItems.Remove(item);
+            }
         }
     }
 }
