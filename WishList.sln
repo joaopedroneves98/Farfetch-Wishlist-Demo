@@ -64,6 +64,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SVC_Wishlist", "SVC_Wishlis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.Services.Tests", "Application.Services.Tests\Application.Services.Tests.csproj", "{E916EDA7-3C80-4E2A-8A20-9ECA9798ED8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Model.Tests", "Domain.Model.Tests\Domain.Model.Tests.csproj", "{3447AEDE-BF01-4B95-ADC4-CAF7A5675B17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +116,10 @@ Global
 		{E916EDA7-3C80-4E2A-8A20-9ECA9798ED8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E916EDA7-3C80-4E2A-8A20-9ECA9798ED8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E916EDA7-3C80-4E2A-8A20-9ECA9798ED8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3447AEDE-BF01-4B95-ADC4-CAF7A5675B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3447AEDE-BF01-4B95-ADC4-CAF7A5675B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3447AEDE-BF01-4B95-ADC4-CAF7A5675B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3447AEDE-BF01-4B95-ADC4-CAF7A5675B17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,6 +150,7 @@ Global
 		{F742B330-B87B-4A90-AF06-2FF22000F192} = {83393587-0B3C-4111-83C6-FB1256DA8959}
 		{D950E914-17AF-4721-B05C-FEC36F2C3499} = {F742B330-B87B-4A90-AF06-2FF22000F192}
 		{E916EDA7-3C80-4E2A-8A20-9ECA9798ED8E} = {AA17EB84-2984-4DDE-9642-7F0A3F2A4886}
+		{3447AEDE-BF01-4B95-ADC4-CAF7A5675B17} = {8A0EC441-4AF2-4421-8CD2-B2796EFE43BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF8BD141-4B5D-4DC2-B941-F6DEF923A9A0}

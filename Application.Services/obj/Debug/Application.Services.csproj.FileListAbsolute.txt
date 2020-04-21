@@ -47,5 +47,4 @@ C:\Projects\WishList\Application.Services\obj\Debug\Application.Services.dll
 C:\Projects\WishList\Application.Services\obj\Debug\Application.Services.pdb
 C:\Projects\WishList\Application.Services\bin\Debug\Domain.Services.dll
 C:\Projects\WishList\Application.Services\bin\Debug\Domain.Services.pdb
-C:\Projects\WishList\Application.Services\bin\Debug\Application.Services.dll.CodeAnalysisLog.xml
-C:\Projects\WishList\Application.Services\bin\Debug\Application.Services.dll.lastcodeanalysissucceeded
+C:\Projects\WishList\Application.Services\obj\Debug\Application.Services.csproj.CoreCompileInputs.cache

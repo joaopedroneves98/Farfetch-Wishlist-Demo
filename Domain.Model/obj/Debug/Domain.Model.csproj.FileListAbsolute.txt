@@ -2,5 +2,5 @@ C:\Projects\WishList\Domain.Model\bin\Debug\Domain.Model.dll
 C:\Projects\WishList\Domain.Model\bin\Debug\Domain.Model.pdb
 C:\Projects\WishList\Domain.Model\obj\Debug\Domain.Model.dll
 C:\Projects\WishList\Domain.Model\obj\Debug\Domain.Model.pdb
-C:\Projects\WishList\Domain.Model\bin\Debug\Domain.Model.dll.CodeAnalysisLog.xml
-C:\Projects\WishList\Domain.Model\bin\Debug\Domain.Model.dll.lastcodeanalysissucceeded
+C:\Projects\WishList\Domain.Model\obj\Debug\Domain.Model.csprojAssemblyReference.cache
+C:\Projects\WishList\Domain.Model\obj\Debug\Domain.Model.csproj.CoreCompileInputs.cache
