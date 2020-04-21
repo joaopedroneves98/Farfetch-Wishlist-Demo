@@ -45,5 +45,13 @@
         {
             return this.Wishlists.Find(w => w.ExternalId == wishlistID);
         }
+
+        public void RemoveWishlist(Wishlist wishlist)
+        {
+            if (wishlist != null && this.Wishlists.Contains(wishlist))
+            {
+                this.Wishlists.Remove(wishlist);
+            }
+        }
     }
 }
