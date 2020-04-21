@@ -109,7 +109,7 @@ namespace Application.Services.Tests
             };
             var owner = OwnerDTOMapper.DTOToObject(dto);
 
-            this.mockOwnerRepository.Setup(o => o.AddOwner(owner)).Returns(owner); // WIP
+            this.mockOwnerRepository.Setup(o => o.AddOwner(It.IsAny<Owner>())).Returns(owner);
 
             var result = this.ownerService.AddOwner(dto);
 
@@ -127,7 +127,7 @@ namespace Application.Services.Tests
             };
             var owner = OwnerDTOMapper.DTOToObject(dto);
 
-            this.mockOwnerRepository.Setup(o => o.UpdateOwner(owner)).Returns(owner); // WIP
+            this.mockOwnerRepository.Setup(o => o.UpdateOwner(It.IsAny<Owner>())).Returns(owner); 
 
             var result = this.ownerService.UpdateOwner(dto);
 
