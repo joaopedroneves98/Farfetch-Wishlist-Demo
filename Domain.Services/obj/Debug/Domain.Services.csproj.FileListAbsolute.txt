@@ -8,3 +8,5 @@ C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.csprojAssemblyRef
 C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.csproj.CopyComplete
 C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.dll
 C:\Projects\WishList\Domain.Services\obj\Debug\Domain.Services.pdb
+C:\Projects\WishList\Domain.Services\bin\Debug\Domain.Services.dll.CodeAnalysisLog.xml
+C:\Projects\WishList\Domain.Services\bin\Debug\Domain.Services.dll.lastcodeanalysissucceeded

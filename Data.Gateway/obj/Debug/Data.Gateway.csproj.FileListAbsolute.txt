@@ -3,3 +3,5 @@ C:\Projects\WishList\Data.Gateway\bin\Debug\Data.Gateway.pdb
 C:\Projects\WishList\Data.Gateway\obj\Debug\Data.Gateway.csprojAssemblyReference.cache
 C:\Projects\WishList\Data.Gateway\obj\Debug\Data.Gateway.dll
 C:\Projects\WishList\Data.Gateway\obj\Debug\Data.Gateway.pdb
+C:\Projects\WishList\Data.Gateway\bin\Debug\Data.Gateway.dll.CodeAnalysisLog.xml
+C:\Projects\WishList\Data.Gateway\bin\Debug\Data.Gateway.dll.lastcodeanalysissucceeded

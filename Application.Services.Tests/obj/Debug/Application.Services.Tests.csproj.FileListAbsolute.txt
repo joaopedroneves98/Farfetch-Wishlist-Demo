@@ -65,3 +65,5 @@ C:\Projects\WishList\Application.Services.Tests\obj\Debug\Application.Services.T
 C:\Projects\WishList\Application.Services.Tests\obj\Debug\Application.Services.Tests.csproj.CopyComplete
 C:\Projects\WishList\Application.Services.Tests\obj\Debug\Application.Services.Tests.dll
 C:\Projects\WishList\Application.Services.Tests\obj\Debug\Application.Services.Tests.pdb
+C:\Projects\WishList\Application.Services.Tests\bin\Debug\Application.Services.Tests.dll.CodeAnalysisLog.xml
+C:\Projects\WishList\Application.Services.Tests\bin\Debug\Application.Services.Tests.dll.lastcodeanalysissucceeded

@@ -37,3 +37,5 @@ C:\Projects\WishList\Domain.Core\obj\Debug\Domain.Core.csprojAssemblyReference.c
 C:\Projects\WishList\Domain.Core\obj\Debug\Domain.Core.csproj.CopyComplete
 C:\Projects\WishList\Domain.Core\obj\Debug\Domain.Core.dll
 C:\Projects\WishList\Domain.Core\obj\Debug\Domain.Core.pdb
+C:\Projects\WishList\Domain.Core\bin\Debug\Domain.Core.dll.CodeAnalysisLog.xml
+C:\Projects\WishList\Domain.Core\bin\Debug\Domain.Core.dll.lastcodeanalysissucceeded

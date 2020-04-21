@@ -33,3 +33,5 @@ C:\Projects\WishList\Client\bin\Debug\Microsoft.Extensions.Primitives.xml
 C:\Projects\WishList\Client\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
 C:\Projects\WishList\Client\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Projects\WishList\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Projects\WishList\Client\bin\Debug\Client.dll.CodeAnalysisLog.xml
+C:\Projects\WishList\Client\bin\Debug\Client.dll.lastcodeanalysissucceeded

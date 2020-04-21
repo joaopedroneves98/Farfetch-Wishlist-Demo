@@ -43,3 +43,5 @@ C:\Projects\WishList\Data.Repository\bin\Debug\System.Runtime.CompilerServices.U
 C:\Projects\WishList\Data.Repository\obj\Debug\Data.Repository.csproj.CopyComplete
 C:\Projects\WishList\Data.Repository\obj\Debug\Data.Repository.dll
 C:\Projects\WishList\Data.Repository\obj\Debug\Data.Repository.pdb
+C:\Projects\WishList\Data.Repository\bin\Debug\Data.Repository.dll.CodeAnalysisLog.xml
+C:\Projects\WishList\Data.Repository\bin\Debug\Data.Repository.dll.lastcodeanalysissucceeded

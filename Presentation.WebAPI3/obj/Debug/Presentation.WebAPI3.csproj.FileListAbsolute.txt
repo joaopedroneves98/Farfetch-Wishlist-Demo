@@ -128,3 +128,5 @@ C:\Projects\WishList\Presentation.WebAPI3\bin\Unity.AspNet.WebApi.xml
 C:\Projects\WishList\Presentation.WebAPI3\bin\Unity.Container.pdb
 C:\Projects\WishList\Presentation.WebAPI3\bin\Domain.Services.dll
 C:\Projects\WishList\Presentation.WebAPI3\bin\Domain.Services.pdb
+C:\Projects\WishList\Presentation.WebAPI3\bin\Presentation.WebAPI3.dll.CodeAnalysisLog.xml
+C:\Projects\WishList\Presentation.WebAPI3\bin\Presentation.WebAPI3.dll.lastcodeanalysissucceeded
