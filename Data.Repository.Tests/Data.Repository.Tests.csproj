@@ -250,6 +250,7 @@
   <ItemGroup>
     <Compile Include="OwnerRepositoryTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WishlistRepositoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
