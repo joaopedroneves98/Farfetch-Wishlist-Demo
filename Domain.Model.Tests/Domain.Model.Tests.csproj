@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="OwnerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WishlistItemAttributeTest.cs" />
+    <Compile Include="WishlistItemTest.cs" />
     <Compile Include="WishlistTest.cs" />
   </ItemGroup>
   <ItemGroup>
