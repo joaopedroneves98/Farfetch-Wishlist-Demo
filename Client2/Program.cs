@@ -1,16 +1,16 @@
-﻿using Application.DTO;
-using Client2.Implementations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Client2
+﻿namespace Client2
 {
+    using Application.DTO;
+    using Client2.Implementations;
+    using System;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public class Program
     {
         private static readonly OwnerClient ownerClient = new OwnerClient("https://localhost:44336/");
+
+        private static readonly WishlistClient wishlistClient = new WishlistClient("https://localhost:44336/");
 
         static async Task Main()
         {
@@ -21,6 +21,10 @@ namespace Client2
                 Console.WriteLine("2) Get Owner");
                 Console.WriteLine("3) Get all Owners");
                 Console.WriteLine("4) Delete Owner");
+                Console.WriteLine("5) Add Wishlist");
+                Console.WriteLine("6) Get Wishlist");
+                Console.WriteLine("7) Get all Wishlists");
+                Console.WriteLine("8) Delete Wishlist");
                 Console.WriteLine("0 -> Exit");
 
                 string response = Console.ReadLine();
@@ -41,6 +45,22 @@ namespace Client2
 
                     case "4":
                         await PerformClientCallAndWaitForInput(DeleteOwner);
+                        break;
+
+                    case "5":
+                        await PerformClientCallAndWaitForInput(CreateWishlist);
+                        break;
+
+                    case "6":
+                        await PerformClientCallAndWaitForInput(GetWishlist);
+                        break;
+
+                    case "7":
+                        await PerformClientCallAndWaitForInput(GetWishlists);
+                        break;
+
+                    case "8":
+                        await PerformClientCallAndWaitForInput(DeleteWishlist);
                         break;
 
                     case "0":
@@ -148,6 +168,111 @@ namespace Client2
                 Console.WriteLine($"Deleted the owner: {externalID}. {url}");
             }
 
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static async Task CreateWishlist()
+        {
+            Console.WriteLine("Please write the external ID of the Owner you want to add the Wishlist to:");
+            var ownerExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the External ID of the Wishlist:");
+            var externalID = Console.ReadLine();
+            try
+            {
+                var wishlistToAdd = new WishlistDTO
+                {
+                    ExternalId = externalID,
+                    DateCreated = DateTime.Now,
+                    DateUpdated = DateTime.Now
+                };
+
+                var url = await wishlistClient.PostWishlistAsync(ownerExternalID, wishlistToAdd);
+                Console.WriteLine($"Created the wishlist {externalID}. {url}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static async Task GetWishlists()
+        {
+            Console.WriteLine("Please write the external Id of the Owner you want to get the Wishlists from:");
+            var ownerExternalID = Console.ReadLine();
+            try
+            {
+                var list = await wishlistClient.GetAllWishlistsAsync(ownerExternalID);
+                ShowAllWishlists(ownerExternalID, list);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static void ShowAllWishlists(string ownerExternalID, List<WishlistDTO> list)
+        {
+            Console.WriteLine($"-------------------\n" +
+                   $"Wishlists from owner {ownerExternalID}\n");
+
+            if (list.Count > 0)
+            {
+                foreach (var wishlist in list)
+                {
+                    Console.WriteLine(
+                        $"-------------------\n" +
+                        $"Id: {wishlist.Id}" +
+                        $"\nExternal ID: {wishlist.ExternalId}" +
+                        $"\nOwner ID: {wishlist.OwnerID}" +
+                        $"\nDate Created: {wishlist.DateCreated}" +
+                        $"\nDate Updated: {wishlist.DateUpdated} \n" +
+                        $"-------------------\n");
+                }
+            }
+            else Console.WriteLine($"The list is empty");
+        }
+
+        static async Task GetWishlist()
+        {
+            Console.WriteLine("Please write the External Id of the Owner:");
+            var ownerExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the External Id of the Wishlist:");
+            var wishlistExternalID = Console.ReadLine();
+
+            try
+            {
+                var wishlist = await wishlistClient.GetWishlistAsync(ownerExternalID, wishlistExternalID);
+                Console.WriteLine($"---------------------\n" +
+                        $"Id: {wishlist.Id}" +
+                        $"\nExternal ID: {wishlist.ExternalId}" +
+                        $"\nOwner ID: {wishlist.OwnerID}" +
+                        $"\nDate Created: {wishlist.DateCreated}" +
+                        $"\nDate Updated: {wishlist.DateUpdated} \n" +
+                        $"-------------------\n");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static async Task DeleteWishlist()
+        {
+            Console.WriteLine("Please write the External Id of the Owner you want to delete the List from:");
+            var ownerExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the External Id of the Wishlist you want to delete:");
+            var wishlistExternalID = Console.ReadLine();
+            try
+            {
+                var url = await wishlistClient.DeleteWishlistAsync(ownerExternalID, wishlistExternalID);
+                Console.WriteLine($"Deleted the wishlist {wishlistExternalID}. {url}");
+            }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);

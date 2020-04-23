@@ -51,7 +51,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementations\OwnerClient.cs" />
+    <Compile Include="Implementations\WishlistClient.cs" />
     <Compile Include="Interfaces\IOwnerClient.cs" />
+    <Compile Include="Interfaces\IWishlistClient.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

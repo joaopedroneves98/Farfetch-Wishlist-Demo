@@ -1,13 +1,13 @@
-﻿using Application.DTO;
-using Client2.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-
-namespace Client2.Implementations
+﻿namespace Client2.Implementations
 {
+    using Application.DTO;
+    using Client2.Interfaces;
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Net.Http.Headers;
+    using System.Threading.Tasks;
+
     public class OwnerClient : HttpClient, IOwnerClient
     {
         public OwnerClient(string address)
