@@ -11,6 +11,8 @@
         private static readonly OwnerClient ownerClient = new OwnerClient("https://localhost:44336/");
 
         private static readonly WishlistClient wishlistClient = new WishlistClient("https://localhost:44336/");
+        
+        private static readonly WishlistItemClient wishlistItemClient = new WishlistItemClient("https://localhost:44336/");
 
         static async Task Main()
         {
@@ -25,6 +27,10 @@
                 Console.WriteLine("6) Get Wishlist");
                 Console.WriteLine("7) Get all Wishlists");
                 Console.WriteLine("8) Delete Wishlist");
+                Console.WriteLine("9) Add Wishlist Item");
+                Console.WriteLine("10) Get Wishlist Item");
+                Console.WriteLine("11) Get All Wishlist Items");
+                Console.WriteLine("12) Delete Wishlist Item");
                 Console.WriteLine("0 -> Exit");
 
                 string response = Console.ReadLine();
@@ -63,10 +69,27 @@
                         await PerformClientCallAndWaitForInput(DeleteWishlist);
                         break;
 
+                    case "9":
+                        await PerformClientCallAndWaitForInput(CreateItem);
+                        break;
+
+                    case "10":
+                        await PerformClientCallAndWaitForInput(GetItem);
+                        break;
+
+                    case "11":
+                        await PerformClientCallAndWaitForInput(GetItems);
+                        break;
+
+                    case "12":
+                        await PerformClientCallAndWaitForInput(DeleteItem);
+                        break;
+
                     case "0":
                         Environment.Exit(0);
                         break;
                     default:
+                        Console.Clear();
                         break;
                 }
             } while (true);
@@ -272,6 +295,136 @@
             {
                 var url = await wishlistClient.DeleteWishlistAsync(ownerExternalID, wishlistExternalID);
                 Console.WriteLine($"Deleted the wishlist {wishlistExternalID}. {url}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static async Task CreateItem()
+        {
+            Console.WriteLine("Please write the External ID of the Owner:");
+            var ownerExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the External ID of the Wishlist:");
+            var wishlistID = Console.ReadLine();
+
+            Console.WriteLine("Please write the Code of the Item to be added:");
+            var code = Console.ReadLine();
+
+            Console.WriteLine("Please write the Name of the Item to be added:");
+            var name = Console.ReadLine();
+
+            Console.WriteLine("Please write the Price of the Item to be added:");
+            var price = Convert.ToDouble(Console.ReadLine());
+
+            try
+            {
+                var itemToAdd = new WishlistItemDTO
+                {
+                    WishlistId = int.Parse(wishlistID),
+                    Code = code,
+                    Name = name,
+                    Price = price,
+                    DateCreated = DateTime.Now,
+                    DateUpdated = DateTime.Now
+                };
+
+                var url = await wishlistItemClient.PostItemAsync(ownerExternalID, wishlistID, itemToAdd);
+                Console.WriteLine($"Created the item {name}. {url}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static async Task DeleteItem()
+        {
+            Console.WriteLine("Please write the External Id of the Owner:");
+            var ownerExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the External Id of the Wishlist you want to delete the Item from:");
+            var wishlistExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the code of the Item you want to delete:");
+            var code = Console.ReadLine();
+
+            try
+            {
+                var url = await wishlistItemClient.DeleteWishlistAsync(ownerExternalID, wishlistExternalID, code);
+                Console.WriteLine($"Deleted the item {code} from list {wishlistExternalID}. {url}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static async Task GetItems()
+        {
+            Console.WriteLine("Please write the external Id of the Owner:");
+            var ownerExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the external Id of the Wishlist you want to get the Items from:");
+            var wishlistID = Console.ReadLine();
+            try
+            {
+                var list = await wishlistItemClient.GetAllItemsAsync(ownerExternalID, wishlistID);
+                ShowAllItems(ownerExternalID, wishlistID, list);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        static void ShowAllItems(string ownerExternalID, string wishlistID, List<WishlistItemDTO> list)
+        {
+            Console.WriteLine($"-------------------\n" +
+                   $"Items from Wishlist {wishlistID} - Owner {ownerExternalID}\n");
+
+            if (list.Count > 0)
+            {
+                foreach (WishlistItemDTO item in list)
+                {
+                    Console.WriteLine(
+                        $"-------------------\n" +
+                        $"Id: {item.Id}" +
+                        $"\nCode: {item.Code}" +
+                        $"\nName: {item.Name}" +
+                        $"\nPrice: {item.Price}" +
+                        $"\nDate Created: {item.DateCreated}" +
+                        $"\nDate Updated: {item.DateUpdated} \n" +
+                        $"-------------------\n");
+                }
+            }
+            else Console.WriteLine($"The list is empty");
+        }
+
+        static async Task GetItem()
+        {
+            Console.WriteLine("Please write the External Id of the Owner:");
+            var ownerExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the External Id of the Wishlist:");
+            var wishlistExternalID = Console.ReadLine();
+
+            Console.WriteLine("Please write the Code of the Item:");
+            var itemCode = Console.ReadLine();
+
+            try
+            {
+                var item = await wishlistItemClient.GetItemAsync(ownerExternalID, wishlistExternalID, itemCode);
+                Console.WriteLine($"---------------------\n" +
+                        $"Id: {item.Id}" +
+                        $"\nCode: {item.Code}" +
+                        $"\nName: {item.Name}" +
+                        $"\nPrice: {item.Price}" +
+                        $"\nDate Created: {item.DateCreated}" +
+                        $"\nDate Updated: {item.DateUpdated} \n" +
+                        $"-------------------\n");
             }
             catch (Exception e)
             {
