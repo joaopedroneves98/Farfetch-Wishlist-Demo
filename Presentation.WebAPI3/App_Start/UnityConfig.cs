@@ -5,9 +5,15 @@ namespace Presentation.WebAPI3
     using Data.Repository.Interfaces.Repositories;
     using Data.Repository.Models;
     using Data.Repository.Repositories;
+    using Infrastructure.CrossCutting;
+    using Infrastructure.CrossCutting.Messaging;
+    using Presentation.WebAPI3.MessagingConfig;
+    using Producer;
     using System;
+    using System.Configuration;
     using System.Data.Entity;
     using Unity;
+    using Unity.Lifetime;
 
     /// <summary>
     /// Specifies the Unity configuration for the main container.
@@ -47,11 +53,22 @@ namespace Presentation.WebAPI3
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+
+            var kafkaConfig = new KafkaConfiguration
+            {
+                Address = "localhost:9092",
+                OwnerTopicName = "wishlist_owner"
+            };
+
+            container.RegisterInstance<IKafkaConfiguration>(kafkaConfig);
             container.RegisterType<DbContext, WishlistContext>();
             container.RegisterType<IOwnerRepository, OwnerRepository>();
             container.RegisterType<IOwnerService, OwnerService>();
             container.RegisterType<IWishlistRepository, WishlistRepository>();
             container.RegisterType<IWishlistService, WishlistService>();
+            container.RegisterType<IServiceBus, MassTransitServiceBus>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IMessagingInitializer, RabbitMqMessagingInitializer>(new ContainerControlledLifetimeManager());
+            container.RegisterType<IOwnerProducer, OwnerProducer>();
         }
     }
 }

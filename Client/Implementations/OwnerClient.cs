@@ -15,7 +15,7 @@
 
         public OwnerDTO AddOwner(OwnerDTO ownerDTO)
         {
-            return this.ownerService.AddOwner(ownerDTO);
+            return this.ownerService.AddOwnerAsync(ownerDTO);
         }
 
         public OwnerDTO DeleteOwner(string ownerId)

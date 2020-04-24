@@ -2,9 +2,11 @@
 {
     using Application.DTO;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
+
     public interface IOwnerService
     {
-        OwnerDTO AddOwner(OwnerDTO dto);
+        Task<OwnerDTO> AddOwnerAsync(OwnerDTO dto);
 
         List<OwnerDTO> GetAllOwners();
 

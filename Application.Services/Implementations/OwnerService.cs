@@ -4,18 +4,25 @@
     using Application.Services.Interfaces;
     using Data.Repository.Interfaces.Repositories;
     using Domain.Services.Mapping;
+    using Producer;
+    using System;
     using System.Collections.Generic;
+    using Wishlist.Contracts.V1.Events;
+
     public class OwnerService : IOwnerService
     {
 
         private readonly IOwnerRepository ownerRepository;
 
-        public OwnerService(IOwnerRepository ownerRepository)
+        private readonly IOwnerProducer ownerProducer;
+
+        public OwnerService(IOwnerRepository ownerRepository, IOwnerProducer ownerProducer)
         {
             this.ownerRepository = ownerRepository;
+            this.ownerProducer = ownerProducer;
         }
 
-        public OwnerDTO AddOwner(OwnerDTO dto)
+        public async System.Threading.Tasks.Task<OwnerDTO> AddOwnerAsync(OwnerDTO dto)
         {
             var ownerToAdd = OwnerDTOMapper.DTOToObject(dto);
             if (ownerToAdd == null)
@@ -23,6 +30,7 @@
                 return null;
             }
             var ownerAdded = this.ownerRepository.AddOwner(ownerToAdd);
+            await this.ownerProducer.SendMessageAsync(OwnerDTOMapper.ObjectToDTO(ownerAdded)).ConfigureAwait(false);
             return OwnerDTOMapper.ObjectToDTO(ownerAdded);
         }
 

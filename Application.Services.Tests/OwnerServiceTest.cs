@@ -111,7 +111,7 @@ namespace Application.Services.Tests
 
             this.mockOwnerRepository.Setup(o => o.AddOwner(It.IsAny<Owner>())).Returns(owner);
 
-            var result = this.ownerService.AddOwner(dto);
+            var result = this.ownerService.AddOwnerAsync(dto);
 
             Assert.AreEqual(owner.ExternalId, result.ExternalID);
         }

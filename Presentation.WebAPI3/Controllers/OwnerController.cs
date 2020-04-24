@@ -41,7 +41,7 @@
             {
                 return this.BadRequest("Can't add a null owner");
             }
-            var added = this.ownerService.AddOwner(owner);
+            var added = this.ownerService.AddOwnerAsync(owner);
             if (added == null)
             {
                 return this.BadRequest("Problem adding owner");
